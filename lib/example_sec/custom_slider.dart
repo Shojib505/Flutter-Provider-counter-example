@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_counter_example/example_sec/video_progress.dart';
 
 class CustomSlider extends StatefulWidget {
   const CustomSlider({Key? key}) : super(key: key);
@@ -13,6 +14,9 @@ class _CustomSliderState extends State<CustomSlider> {
   void _onValueChanged(double val) {
     setState(() {
       _sliderValue = val;
+    });
+    stateOfVideoProgress.setState(() {
+      stateOfVideoProgress.progress = val * 100;
     });
   }
 
